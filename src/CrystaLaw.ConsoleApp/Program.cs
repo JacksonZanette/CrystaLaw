@@ -21,12 +21,16 @@ namespace CrystaLaw.ConsoleApp
             var legislatorsService = serviceProvider.GetRequiredService<ILegislatorsService>();
             var legislatorsVotesCountResult = await legislatorsService.GetLegislatorsWithVoteCountsAsync(CancellationToken.None);
 
-            CSVParser.WriteRecords($"Data{Path.DirectorySeparatorChar}legislators-support-oppose-count.csv", legislatorsVotesCountResult);
+            var relativePath = $"Data{Path.DirectorySeparatorChar}legislators-support-oppose-count.csv";
+            CSVParser.WriteRecords(relativePath, legislatorsVotesCountResult);
+            Console.WriteLine($"File '{Directory.GetCurrentDirectory()}{Path.DirectorySeparatorChar}{relativePath}' generated");
 
             var billsService = serviceProvider.GetRequiredService<IBillsService>();
             var billsVotesCountResult = await billsService.GetBillsWithVouteCountsAsync(CancellationToken.None);
 
-            CSVParser.WriteRecords($"Data{Path.DirectorySeparatorChar}bills-supported-opposed-count.csv", billsVotesCountResult);
+            relativePath = $"Data{Path.DirectorySeparatorChar}bills-supported-opposed-count.csv";
+            CSVParser.WriteRecords(relativePath, billsVotesCountResult);
+            Console.WriteLine($"File '{Directory.GetCurrentDirectory()}{Path.DirectorySeparatorChar}{relativePath}' generated");
         }
     }
 }
