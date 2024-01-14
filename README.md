@@ -10,7 +10,7 @@ This project is meant to provide transparency in the laws and how the legislator
 
 ## Requirements (required)
 
-This projects requires the [.NET 6.0 SKD](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) to be built
+This projects requires the [.NET 6.0 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) to be built
 
 ## How to run
 
