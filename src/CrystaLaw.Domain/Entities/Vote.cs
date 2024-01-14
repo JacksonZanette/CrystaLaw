@@ -1,6 +1,6 @@
 ﻿namespace CrystaLaw.Domain.Entities
 {
-    public class BillVote
+    public class Vote
     {
         public int Id { get; set; }
         public int BillId { get; set; }

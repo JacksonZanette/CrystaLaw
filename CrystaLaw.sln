@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystaLaw.Domain", "src\CrystaLaw.Domain\CrystaLaw.Domain.csproj", "{6A018EB9-CA42-489E-A37E-E7A6F7EA7396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrystaLaw.Domain", "src\CrystaLaw.Domain\CrystaLaw.Domain.csproj", "{6A018EB9-CA42-489E-A37E-E7A6F7EA7396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystaLaw.Domain.Test", "CrystaLaw.Domain.Test\CrystaLaw.Domain.Test.csproj", "{E33D45D7-97CD-454C-99E0-23901A8DF003}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrystaLaw.Domain.Test", "src\CrystaLaw.Domain.Test\CrystaLaw.Domain.Test.csproj", "{977B5C01-B4D5-4895-B80B-0AEAFB0FB701}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystaLaw.Infra", "src\CrystaLaw.Infra\CrystaLaw.Infra.csproj", "{CC50216E-2F60-4BC2-99E1-148829133316}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrystaLaw.ConsoleApp", "src\CrystaLaw.ConsoleApp\CrystaLaw.ConsoleApp.csproj", "{F7DAD978-0785-4E4A-8012-D4DDA35DCA12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrystaLaw.ConsoleApp.Infra", "src\CrystaLaw.ConsoleApp.Infra\CrystaLaw.ConsoleApp.Infra.csproj", "{C320674F-DA2A-4BEB-9299-C9241AC47D28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +21,18 @@ Global
 		{6A018EB9-CA42-489E-A37E-E7A6F7EA7396}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A018EB9-CA42-489E-A37E-E7A6F7EA7396}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A018EB9-CA42-489E-A37E-E7A6F7EA7396}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E33D45D7-97CD-454C-99E0-23901A8DF003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E33D45D7-97CD-454C-99E0-23901A8DF003}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E33D45D7-97CD-454C-99E0-23901A8DF003}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E33D45D7-97CD-454C-99E0-23901A8DF003}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC50216E-2F60-4BC2-99E1-148829133316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC50216E-2F60-4BC2-99E1-148829133316}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC50216E-2F60-4BC2-99E1-148829133316}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC50216E-2F60-4BC2-99E1-148829133316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{977B5C01-B4D5-4895-B80B-0AEAFB0FB701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977B5C01-B4D5-4895-B80B-0AEAFB0FB701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977B5C01-B4D5-4895-B80B-0AEAFB0FB701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{977B5C01-B4D5-4895-B80B-0AEAFB0FB701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DAD978-0785-4E4A-8012-D4DDA35DCA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DAD978-0785-4E4A-8012-D4DDA35DCA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DAD978-0785-4E4A-8012-D4DDA35DCA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DAD978-0785-4E4A-8012-D4DDA35DCA12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C320674F-DA2A-4BEB-9299-C9241AC47D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C320674F-DA2A-4BEB-9299-C9241AC47D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C320674F-DA2A-4BEB-9299-C9241AC47D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C320674F-DA2A-4BEB-9299-C9241AC47D28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

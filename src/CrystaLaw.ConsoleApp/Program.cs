@@ -14,12 +14,19 @@ namespace CrystaLaw.ConsoleApp
             var serviceProvider = new ServiceCollection()
                 .AddScoped<ILegislatorsService, LegislatorsService>()
                 .AddScoped<ILegislatorsRepository, CSVLegislatorsRepository>()
+                .AddScoped<IBillsService, BillsService>()
+                .AddScoped<IBillsRepository, CSVBillsRepository>()
                 .BuildServiceProvider();
 
             var legislatorsService = serviceProvider.GetRequiredService<ILegislatorsService>();
-            var result = await legislatorsService.GetLegislatorsWithVoteCountsAsync(CancellationToken.None);
+            var legislatorsVotesCountResult = await legislatorsService.GetLegislatorsWithVoteCountsAsync(CancellationToken.None);
 
-            CSVParser.WriteRecords($"Data{Path.DirectorySeparatorChar}legislators-support-oppose-count.csv", result);
+            CSVParser.WriteRecords($"Data{Path.DirectorySeparatorChar}legislators-support-oppose-count.csv", legislatorsVotesCountResult);
+
+            var billsService = serviceProvider.GetRequiredService<IBillsService>();
+            var billsVotesCountResult = await billsService.GetBillsWithVouteCountsAsync(CancellationToken.None);
+
+            CSVParser.WriteRecords($"Data{Path.DirectorySeparatorChar}bills-supported-opposed-count.csv", billsVotesCountResult);
         }
     }
 }
