@@ -17,5 +17,31 @@ namespace CrystaLaw.ConsoleApp.Infra.Helpers
 
             return csv.GetRecords<T>().ToArray();
         }
+
+        public static void WriteRecords<T>(string file, IEnumerable<T> records)
+        {
+            using var writer = new StreamWriter(file);
+            using var csv = new CsvWriter(writer, new CsvConfiguration(CultureInfo.InvariantCulture));
+
+            var map = new DefaultClassMap<T>();
+
+            map.AutoMap(CultureInfo.InvariantCulture);
+
+            foreach (var memberMap in map.MemberMaps)
+                memberMap.Data.Names.Add(memberMap.Data.Member!.Name.ToSnakeCase());
+
+            csv.Context.RegisterClassMap(map);
+
+            csv.WriteHeader<T>();
+            csv.NextRecord();
+
+            foreach (var record in records)
+            {
+                csv.WriteRecord(record);
+                csv.NextRecord();
+            }
+
+            csv.Flush();
+        }
     }
 }

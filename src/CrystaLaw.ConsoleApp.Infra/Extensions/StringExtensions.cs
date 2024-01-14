@@ -22,5 +22,10 @@ namespace CrystaLaw.ConsoleApp.Infra.Extensions
 
             return string.Concat(pascalCase);
         }
+
+        public static string ToSnakeCase(this string original)
+            => string.Concat(original.Select((x, i) => i > 0 && char.IsUpper(x)
+                                                    ? "_" + x.ToString().ToLower()
+                                                    : x.ToString().ToLower()));
     }
 }

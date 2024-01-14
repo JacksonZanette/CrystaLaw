@@ -21,9 +21,9 @@ namespace CrystaLaw.ConsoleApp.Infra.Repositories
             (
                 Id: legislator.Id,
                 Name: legislator.Name,
-                OpposedBillsCount: voteResults.Count(voteResult => voteResult.VoteType == VoteType.No &&
+                NumOpposedBills: voteResults.Count(voteResult => voteResult.VoteType == VoteType.No &&
                     voteResult.LegislatorId == legislator.Id),
-                SupportedBillsCount: voteResults.Count(voteResult => voteResult.VoteType == VoteType.Yes &&
+                NumSupportedBills: voteResults.Count(voteResult => voteResult.VoteType == VoteType.Yes &&
                     voteResult.LegislatorId == legislator.Id)
             )));
         }

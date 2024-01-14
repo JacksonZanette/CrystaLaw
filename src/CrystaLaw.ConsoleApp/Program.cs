@@ -1,4 +1,5 @@
-﻿using CrystaLaw.ConsoleApp.Infra.Repositories;
+﻿using CrystaLaw.ConsoleApp.Infra.Helpers;
+using CrystaLaw.ConsoleApp.Infra.Repositories;
 using CrystaLaw.Domain.Interfaces.Repositories;
 using CrystaLaw.Domain.Interfaces.Services;
 using CrystaLaw.Domain.Services;
@@ -18,7 +19,7 @@ namespace CrystaLaw.ConsoleApp
             var legislatorsService = serviceProvider.GetRequiredService<ILegislatorsService>();
             var result = await legislatorsService.GetLegislatorsWithVoteCountsAsync(CancellationToken.None);
 
-            Console.WriteLine(string.Join(Environment.NewLine, result));
+            CSVParser.WriteRecords($"Data{Path.DirectorySeparatorChar}legislators-support-oppose-count.csv", result);
         }
     }
 }
