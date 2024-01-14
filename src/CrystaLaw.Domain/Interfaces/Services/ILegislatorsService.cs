@@ -4,6 +4,6 @@ namespace CrystaLaw.Domain.Interfaces.Services
 {
     public interface ILegislatorsService
     {
-        Task<IEnumerable<LegislatorWithVoteCountsDto>> GetLegislatorsWithVoteCountsAsync();
+        Task<IEnumerable<LegislatorWithVoteCountsDto>> GetLegislatorsWithVoteCountsAsync(CancellationToken cancellationToken);
     }
 }

@@ -19,15 +19,16 @@ namespace CrystaLaw.Domain.Test
         public async Task GetLegislatorWithVoteCounts_WhenRequestedWithDataPresent_ShouldReturnFilledLegislatorWithVoteCountsDtoCollection(
             IEnumerable<LegislatorWithVoteCountsDto> expected)
         {
-            //Act
+            //Arrange
+            var cancellationToken = new CancellationToken();
             var repositoryMock = _autoMocker.GetMock<ILegislatorsRepository>()
-                .Setup(e => e.GetLegislatorsWithVoteCountsAsync())
+                .Setup(e => e.GetLegislatorsWithVoteCountsAsync(cancellationToken))
                 .ReturnsAsync(expected);
 
             var service = CreateService();
 
-            //Arrange
-            var result = await service.GetLegislatorsWithVoteCountsAsync();
+            //Act
+            var result = await service.GetLegislatorsWithVoteCountsAsync(cancellationToken);
 
             //Assert
             Assert.NotEmpty(result);

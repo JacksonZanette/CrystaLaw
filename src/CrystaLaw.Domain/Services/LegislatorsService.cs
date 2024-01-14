@@ -11,7 +11,7 @@ namespace CrystaLaw.Domain.Services
         public LegislatorsService(ILegislatorsRepository legislatorsRepository)
             => _legislatorsRepository = legislatorsRepository;
 
-        public Task<IEnumerable<LegislatorWithVoteCountsDto>> GetLegislatorsWithVoteCountsAsync()
-            => _legislatorsRepository.GetLegislatorsWithVoteCountsAsync();
+        public Task<IEnumerable<LegislatorWithVoteCountsDto>> GetLegislatorsWithVoteCountsAsync(CancellationToken cancellationToken)
+            => _legislatorsRepository.GetLegislatorsWithVoteCountsAsync(cancellationToken);
     }
 }
