@@ -30,9 +30,9 @@ I don't have much experience about time complexity, but considering the datasets
 
 3. How would you change your solution to account forfuture columns that might be
 requested, such as “Bill Voted On Date” or“Co-Sponsors”?
-### I should add these columns phisically on the code in three places: On the entities, DTOs and at the place that one's converted to other (in this case, for simplicity, on the CSV repositories creating manually the DTO's).
+'I should add these columns phisically on the code in three places: On the entities, DTOs and at the place that one's converted to other (in this case, for simplicity, on the CSV repositories creating manually the DTO's).
 A more complex solution could require something like AutoMapper to makes things easier.
-One good thing about it is that I've followed an convention and implemented to automatically translate the properties names (in PascalCase) to headers in CSV (in snake_case).
+One good thing about it is that I've followed an convention and implemented to automatically translate the properties names (in PascalCase) to headers in CSV (in snake_case).'
 
 5. How would you change your solution if instead ofreceiving CSVs of data, you were given a
 list of legislators or bills that you should generate a CSV for?
